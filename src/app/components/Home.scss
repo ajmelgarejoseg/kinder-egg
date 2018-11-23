@@ -1,0 +1,151 @@
+
+$phone: 375px;
+$tablet: 768px;
+
+
+body {
+  //background: #333;
+  background-image: radial-gradient(#2f8e2c, #2e7423);
+  background-color: #2e7423;
+  font-family: 'RobotoRegular', 'Roboto', 'Droid Sans', 'Helvetica Neue', 'Segoe UI', 'Segoe', 'Open Sans', 'Helvetica', 'Arial', sans serif;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100%;
+
+  @mixin adjust {
+    width: 60%;
+    margin: 0 auto;
+    @media screen and (max-width: $tablet) {
+      width: 95%;
+    }
+  }
+
+  .home-wrapper {
+
+    text-align: left;
+
+
+    .center-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      header {
+        @include adjust;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        .logo {
+          height: 33px;
+          background: url(../../assets/unibet-logo.png) no-repeat;
+          background-size: 200px 33px;
+          width: 100%;
+
+        }
+      }
+
+      nav {
+        background: #222;
+        ul {
+          @include adjust;
+          padding: 0;
+          list-style: none;
+          li {
+            margin: 0;
+            padding: 0.8rem 0;
+            a {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        padding: 3rem;
+        width: 60%;
+        box-sizing: border-box;
+        @media screen and (max-width: $tablet) {
+          width: 95%;
+          padding: 1rem;
+        }
+
+        h1 {
+          display: flex;
+          justify-content: left;
+          margin: 0;
+        }
+
+        .results-info {
+          .carousel {
+            width: 70%;
+            float: left;
+            padding-right: 1rem;
+            box-sizing: border-box;
+          }
+          .info-bet {
+            width: 30%;
+            float: left;
+            border-left: 1px #b4b4b4 solid;
+            padding: 0 0 0 1rem;
+            box-sizing: border-box;
+          }
+          @media screen and (max-width: $tablet) {
+            .carousel {
+              width: 100%;
+              padding: 0 0 0.5rem 0;
+            }
+            .info-bet {
+              width: 100%;
+              border-left: none;
+              padding: 0;
+              border-top: 1px #b4b4b4 solid;
+            }
+          }
+          @media screen and (max-width: $phone) {
+            .carousel {
+              width: 100%;
+              padding: 0 0 1rem 0;
+            }
+            .info-bet {
+              width: 100%;
+              border-left: none;
+              padding: 0;
+              border-top: 1px #b4b4b4 solid;
+            }
+          }
+        }
+      }
+
+      footer {
+        background: #333;
+        color: #999;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        @media screen and (max-width: $phone) {
+          position: relative;
+        }
+        .inner {
+          @include adjust;
+          display: flex;
+          justify-content: left;
+          text-align: left;
+          p {
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
