@@ -33,7 +33,7 @@ class Index extends Component {
     const expirationTime = localStorage.getItem('expTime');
     this.interval = setInterval(() => this.getApiData(), expirationTime - Date.now());
 
-    if (moment.now() < expirationTime) {
+    if (moment.now() < expirationTime && localStorage.getItem('data')) {
       this.setState({results: JSON.parse(localStorage.getItem('data')), isLoading: false})
     }
 

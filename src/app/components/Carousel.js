@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Slider from 'react-slick';
 import "./Carousel.scss";
 import CarouselItem from "./CarouselItem";
+import {MoonLoader} from "react-spinners";
 
 
 const Carousel = ({ data, isLoading, error = {} }) => {
@@ -14,7 +15,13 @@ const Carousel = ({ data, isLoading, error = {} }) => {
     speed: 500
   };
   if (isLoading) {
-    return (<div>loading...</div>) //TODO: Animation loading
+    return (<div className="loading">
+      <MoonLoader
+        sizeUnit={"px"}
+        size={50}
+        color={'#2e7423'}
+      />
+    </div>)
   }
 
   if (error) {
